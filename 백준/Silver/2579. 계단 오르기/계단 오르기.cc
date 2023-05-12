@@ -21,7 +21,7 @@ int main() {
 	dp[2] = stair[0] + stair[1];
 	if (n >= 3) {
 		for (int i = 3; i <= n; i++) {
-			// 두칸-건너뛰고-마지막, 한칸-건너뛰고-마지막 두칸
+			//한 칸-건너뛰고-마지막 두칸, 두칸-건너뛰고-마지막
 			dp[i] = max(dp[i - 3]+stair[i - 2]+stair[i-1], dp[i-2]+stair[i-1]);
 		}
 	}
