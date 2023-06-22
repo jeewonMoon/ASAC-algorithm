@@ -4,7 +4,7 @@
 #include <sstream>
 
 using namespace std;
-// 닉네임만 최종 닉네임으로 출력해주면 됨
+// 최종 닉네임으로 기록 출력
 // 상태-id / id-닉네임 각 vector, map에 저장
 
 vector<string> solution(vector<string> record) {
@@ -19,11 +19,11 @@ vector<string> solution(vector<string> record) {
         string tmp;
         
         while(stream >> tmp) {
-            split.push_back(tmp);
+            split.push_back(tmp);   //벡터에 단어 삽입
         }
         
-        status.push_back(make_pair(split[0], split[1]));
-        if (split[0]!="Leave") {  //leave는 닉네임x, leave아니면 닉네임 갱신
+        status.push_back(make_pair(split[0], split[1]));    //상태, id
+        if (split[0]!="Leave") {  //leave는 닉네임x, leave 아니면 닉네임 갱신
             name[split[1]]=split[2];
         }
     }
